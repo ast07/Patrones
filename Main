@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        PagoFactory pagoFactory = new PagoFactory () ;
+        Scanner tpago = new Scanner(System.in);
+        System.out.println("Selecciona el tipo de pago: \n1 : PayPal. \n2: Tarjeta de crédito.\n3: Tarjeta de débito.\n4: TransferenciaBancaria.");
+        int tipo = tpago.nextInt();
+        switch (tipo) {
+            case 1 ->
+                    {
+                        Pago pago = pagoFactory.obtenerPago(TipoPago.PayPal);
+                        pago.crearPago();
+
+                    }
+
+            case 2 ->
+                    {
+                        Pago pago = pagoFactory.obtenerPago(TipoPago.TarjetaCredito);
+                        pago.crearPago();
+
+                    }
+
+            case 3 ->
+                    {
+                        Pago pago = pagoFactory.obtenerPago(TipoPago.TarjetaDebito);
+                        pago.crearPago();
+
+                    }
+
+            case 4 ->
+                    {
+                        Pago pago = pagoFactory.obtenerPago(TipoPago.TransferenciaBancaria);
+                        pago.crearPago();
+
+                    }
+        }
+        }
+}
