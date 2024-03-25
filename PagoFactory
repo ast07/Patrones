@@ -1,0 +1,11 @@
+public class PagoFactory {
+    public Pago obtenerPago(TipoPago tipoPago)
+    {
+        return switch(tipoPago) {
+            case PayPal -> new PagoPayPal();
+            case TarjetaCredito -> new PagoTarjetaCredito();
+            case TarjetaDebito -> new PagoTarjetaDebito();
+            case TransferenciaBancaria -> new PagoTransferenciaBancaria();
+        };
+    }
+}
