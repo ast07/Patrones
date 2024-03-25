@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class MainFigura {
+
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Seleccionar el tipo de figura geométrica");
+        int tipo = scanner.nextInt();
+
+        switch (tipo) {
+            case 1:
+                Figura triangulo = FiguraFactory.crearFigura("Triangulo", 2, 3, 3);
+                System.out.println("Área del triángulo: " + triangulo.calcularArea());
+                System.out.println("Perímetro del triángulo: " + triangulo.calcularPerimetro());
+                break;
+            case 2:
+                Figura rectangulo = FiguraFactory.crearFigura("Rectangulo", 4, 5);
+                System.out.println("Área del rectángulo: " + rectangulo.calcularArea());
+                System.out.println("Perímetro del rectángulo: " + rectangulo.calcularPerimetro());
+                break;
+            case 3:
+                Figura circulo = FiguraFactory.crearFigura("Circulo", 3);
+                System.out.println("Área del círculo: " + circulo.calcularArea());
+                System.out.println("Perímetro del círculo: " + circulo.calcularPerimetro());
+                break;
+            default:
+                System.out.println("Opción no válida");
+        }
+
+    }
+}
