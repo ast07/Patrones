@@ -1,0 +1,15 @@
+public class FiguraFactory {
+
+    public static Figura crearFigura(String tipo, double... parametros) {
+        switch (tipo) {
+            case "Triangulo":
+                return new Triangulo(parametros[0], parametros[1], parametros[2]);
+            case "Rectangulo":
+                return new Rectangulo(parametros[0], parametros[1]);
+            case "Circulo":
+                return new Circulo(parametros[0]);
+            default:
+                throw new IllegalArgumentException("Tipo de figura no válido");
+        }
+    }
+}
